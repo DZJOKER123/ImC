@@ -1,0 +1,69 @@
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
+from cli.convert import ConvertOptions, convert_paths, parse_quality
+from cli.utils import available_extensions, normalize_extension
+
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="converter",
+        description="Convert images between formats using Pillow.",
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    convert_parser = subparsers.add_parser("convert", help="Convert files or directories")
+    convert_parser.add_argument("input", nargs="+", help="File or directory path(s)")
+    convert_parser.add_argument("--to", "-t", required=True, help="Target extension (png, jpg, webp, ...)")
+    convert_parser.add_argument("--output", "-o", help="Output directory or file path")
+    convert_parser.add_argument("--recursive", "-r", action="store_true", help="Convert directories recursively")
+    convert_parser.add_argument("--overwrite", action="store_true", help="Overwrite existing files")
+    convert_parser.add_argument(
+        "--remove-source",
+        action="store_true",
+        help="Remove source files after successful conversion",
+    )
+    convert_parser.add_argument("--quality", help="Quality for JPEG/WEBP/AVIF (1-100)")
+
+    subparsers.add_parser("list-formats", help="List supported extensions")
+
+    return parser
+
+def _handle_list_formats() -> int:
+    extensions = sorted(available_extensions().keys())
+    print("Supported extensions:")
+    print(" ".join(extensions))
+    return 0
+
+def _handle_convert(args: argparse.Namespace) -> int:
+    target_extension = normalize_extension(args.to)
+    output = Path(args.output).expanduser() if args.output else None
+    quality = parse_quality(args.quality)
+    inputs = [Path(value).expanduser() for value in args.input]
+
+    if output is not None and len(inputs) > 1 and output.suffix:
+        raise SystemExit("--output must be a directory when converting multiple inputs")
+    if output is not None and output.suffix and any(path.is_dir() for path in inputs):
+        raise SystemExit("--output must be a directory when converting a folder")
+    options = ConvertOptions(
+        target_extension=target_extension,
+        output=output,
+        recursive=args.recursive,
+        overwrite=args.overwrite,
+        remove_source=args.remove_source,
+        quality=quality,
+    )
+    convert_paths(inputs, options)
+    return 0
+
+def main() -> None:
+    parser = _build_parser()
+    args = parser.parse_args()
+
+    if args.command == "list-formats":
+        raise SystemExit(_handle_list_formats())
+    if args.command == "convert":
+        raise SystemExit(_handle_convert(args))
+
+    raise SystemExit(1)
